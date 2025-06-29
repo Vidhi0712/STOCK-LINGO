@@ -131,15 +131,86 @@ body {
   text-decoration: none;
   padding: 4px 16px;
   border-radius: 20px;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .nav-item:hover {
   color: #9e52ee;
 }
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #9e52ee;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* Animated hover effects for Learn, Practice, Contacts */
+.nav-item:nth-child(2):hover {
+  animation: bounce 0.6s ease-in-out;
+}
 
 .nav-item.active {
   background: rgba(255, 247, 247, 0);
+}
+.nav-item:not(.active):hover {
+  color: #9e52ee;
+  transform: translateY(-2px);
+  background: rgba(158, 82, 238, 0.1);
+}
+/*Animated hover effects for Learn, Practice, Contacts */
+.nav-item:nth-child(2):hover {
+  animation: bounce 0.6s ease-in-out;
+}
+
+.nav-item:nth-child(3):hover {
+  animation: pulse 0.6s ease-in-out;
+}
+
+.nav-item:nth-child(4):hover {
+  animation: shake 0.6s ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
 }
 
 /* Login button */
