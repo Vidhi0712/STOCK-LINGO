@@ -1,0 +1,73 @@
+/* Timeframe Selector Specific Styles */
+.timeframe-dropdown .dropdown-option {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.timeframe-dropdown .dropdown-option:last-child {
+  border-bottom: none;
+}
+
+.timeframe-dropdown .option-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.timeframe-dropdown .option-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.selected-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: white;
+  border-radius: 50%;
+}
+
+.timeframe-dropdown .option-description {
+  color: #a3abb2;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  align-self: stretch;
+}
+
+/* Animation for timeframe dropdown */
+.timeframe-dropdown.dropdown-menu {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quick select buttons specific styling */
+.timeframe-dropdown .quick-select {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.timeframe-dropdown .quick-button {
+  min-width: 2rem;
+  text-align: center;
+}
+
+/* Hover states for timeframe options */
+.timeframe-dropdown .dropdown-option:hover .option-name {
+  color: #e5e7eb;
+}
+
+.timeframe-dropdown .dropdown-option:hover .option-description {
+  color: #d1d5db;
+}

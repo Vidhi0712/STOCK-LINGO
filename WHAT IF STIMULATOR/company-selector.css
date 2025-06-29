@@ -1,0 +1,215 @@
+/* Company Selector Dropdown Styles */
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown-button {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  background: #7540c7;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.dropdown-button:hover {
+  background: rgba(117, 64, 199, 0.8);
+}
+
+.dropdown-button.open {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(117, 64, 199, 0.8);
+}
+
+.dropdown-text {
+  color: white;
+  font-size: 1rem;
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-icon {
+  color: #a3abb2;
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.dropdown-button.open .dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: #7540c7;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  max-height: 20rem;
+  overflow: hidden;
+  display: none;
+}
+
+.dropdown-menu.open {
+  display: block;
+}
+
+.dropdown-search {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-input {
+  width: 100%;
+  background: #210e34;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  outline: none;
+  border: none;
+}
+
+.search-input::placeholder {
+  color: #a3abb2;
+}
+
+.dropdown-content {
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.dropdown-section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dropdown-section:last-child {
+  border-bottom: none;
+}
+
+.section-header {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  color: #a3abb2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-option {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.dropdown-option:hover {
+  background: rgba(33, 14, 52, 0.5);
+}
+
+.dropdown-option.selected {
+  background: rgba(33, 14, 52, 0.3);
+}
+
+.option-name {
+  font-size: 0.875rem;
+}
+
+.option-symbol {
+  color: #a3abb2;
+  font-size: 0.75rem;
+}
+
+.option-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.option-description {
+  color: #a3abb2;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+/* Quick Select for Timeframe */
+.quick-select {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem;
+}
+
+.quick-select-label {
+  font-size: 0.75rem;
+  color: #a3abb2;
+  margin-bottom: 0.5rem;
+}
+
+.quick-select-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.quick-button {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #210e34;
+  color: white;
+}
+
+.quick-button:hover {
+  background: rgba(33, 14, 52, 0.7);
+}
+
+.quick-button.selected {
+  background: white;
+  color: #7540c7;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .dropdown-button {
+    height: 3.5rem;
+  }
+}
+
+/* Scrollbar Styling */
+.dropdown-content::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0.125rem;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

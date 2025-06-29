@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinSim - What-If Investing Simulator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="investment-form.css" />
+    <link rel="stylesheet" href="company-selector.css" />
+    <link rel="stylesheet" href="timeframe-selector.css" />
+    <link rel="stylesheet" href="simulation-results.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Background Elements -->
+      <div class="blur-gradient"></div>
+      <div class="stars-background"></div>
+
+      <!-- Navigation -->
+      <nav class="navigation">
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.2424 13.6667C10.3297 13.6667 9.53477 12.2795 9.1212 10.23C8.70767 12.2795 7.91273 13.6667 7 13.6667C6.08727 13.6667 5.29233 12.2795 4.8788 10.23C4.46523 12.2795 3.6703 13.6667 2.75757 13.6667C1.4187 13.6667 0.333333 10.6819 0.333333 7C0.333333 3.3181 1.4187 0.333333 2.75757 0.333333C3.6703 0.333333 4.46523 1.72048 4.8788 3.77C5.29233 1.72048 6.08727 0.333333 7 0.333333C7.91273 0.333333 8.70767 1.72048 9.1212 3.77C9.53477 1.72048 10.3297 0.333333 11.2424 0.333333C12.5813 0.333333 13.6667 3.3181 13.6667 7C13.6667 10.6819 12.5813 13.6667 11.2424 13.6667Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+          <span class="logo-text">FinSim</span>
+        </div>
+
+        <div class="nav-links">
+          <div class="nav-menu">
+            <span class="nav-item">Learn</span>
+            <span class="nav-item">Simulate</span>
+            <span class="nav-item">Community</span>
+          </div>
+
+          <div class="nav-actions">
+            <button class="help-button">Help</button>
+            <div class="profile-avatar">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/371f988d0774905afe07f7a851ce87f932c0e919?width=80"
+                alt="Profile"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="mobile-menu-button">
+          <button class="menu-toggle">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 12H21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 6H21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path
+                d="M3 18H21"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="content-wrapper">
+          <!-- Investment Form Section -->
+          <div class="investment-form-container">
+            <div class="hero-section">
+              <h1 class="hero-title">What-If Investing Simulator</h1>
+              <p class="hero-description">
+                See how your investments could grow over time with different
+                companies or indices.
+              </p>
+            </div>
+
+            <form class="investment-form" id="investmentForm">
+              <!-- Investment Amount -->
+              <div class="form-group">
+                <label class="form-label">Investment Amount</label>
+                <div class="input-container">
+                  <input
+                    type="text"
+                    id="investmentAmount"
+                    class="form-input amount-input"
+                    placeholder="₹10,000"
+                  />
+                  <div class="input-error" id="amountError"></div>
+                </div>
+              </div>
+
+              <!-- Company/Index Selector -->
+              <div class="form-group">
+                <label class="form-label">Company/Index</label>
+                <div class="dropdown-container">
+                  <button
+                    type="button"
+                    class="dropdown-button"
+                    id="companySelector"
+                  >
+                    <span class="dropdown-text" id="companyText"
+                      >Select a company or index</span
+                    >
+                    <svg
+                      class="dropdown-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                  </button>
+                  <div class="dropdown-menu" id="companyDropdown">
+                    <div class="dropdown-search">
+                      <input
+                        type="text"
+                        id="companySearch"
+                        placeholder="Search companies..."
+                        class="search-input"
+                      />
+                    </div>
+                    <div class="dropdown-content">
+                      <div class="dropdown-section">
+                        <div class="section-header">Stocks</div>
+                        <div
+                          class="dropdown-option"
+                          data-value="tech-titans"
+                          data-type="stock"
+                        >
+                          <span class="option-name">Tech Titans Inc.</span>
+                          <span class="option-symbol">TTI</span>
+                        </div>
+                        <div
+                          class="dropdown-option"
+                          data-value="reliance"
+                          data-type="stock"
+                        >
+                          <span class="option-name">Reliance Industries</span>
+                          <span class="option-symbol">RIL</span>
+                        </div>
+                        <div
+                          class="dropdown-option"
+                          data-value="tcs"
+                          data-type="stock"
+                        >
+                          <span class="option-name"
+                            >Tata Consultancy Services</span
+                          >
+                          <span class="option-symbol">TCS</span>
+                        </div>
+                        <div
+                          class="dropdown-option"
+                          data-value="hdfc-bank"
+                          data-type="stock"
+                        >
+                          <span class="option-name">HDFC Bank</span>
+                          <span class="option-symbol">HDFCBANK</span>
+                        </div>
+                        <div
+                          class="dropdown-option"
+                          data-value="infosys"
+                          data-type="stock"
+                        >
+                          <span class="option-name">Infosys Limited</span>
+                          <span class="option-symbol">INFY</span>
+                        </div>
+                      </div>
+                      <div class="dropdown-section">
+                        <div class="section-header">Indices</div>
+                        <div
+                          class="dropdown-option"
+                          data-value="sensex"
+                          data-type="index"
+                        >
+                          <span class="option-name">BSE Sensex</span>
+                          <span class="option-symbol">SENSEX</span>
+                        </div>
+                        <div
+                          class="dropdown-option"
+                          data-value="nifty50"
+                          data-type="index"
+                        >
+                          <span class="option-name">Nifty 50</span>
+                          <span class="option-symbol">NIFTY</span>
+                        </div>
+                        <div
+                          class="dropdown-option"
+                          data-value="banknifty"
+                          data-type="index"
+                        >
+                          <span class="option-name">Bank Nifty</span>
+                          <span class="option-symbol">BANKNIFTY</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-error" id="companyError"></div>
+                </div>
+              </div>
+
+              <!-- Timeframe Selector -->
+              <div class="form-group">
+                <label class="form-label">Timeframe</label>
+                <div class="dropdown-container">
+                  <button
+                    type="button"
+                    class="dropdown-button"
+                    id="timeframeSelector"
+                  >
+                    <span class="dropdown-text" id="timeframeText"
+                      >Select a timeframe</span
+                    >
+                    <svg
+                      class="dropdown-icon"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="6,9 12,15 18,9"></polyline>
+                    </svg>
+                  </button>
+                  <div class="dropdown-menu" id="timeframeDropdown">
+                    <div class="dropdown-content">
+                      <div
+                        class="dropdown-option"
+                        data-value="1year"
+                        data-years="1"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">1 Year</span>
+                        </div>
+                        <p class="option-description">
+                          Short-term investment horizon
+                        </p>
+                      </div>
+                      <div
+                        class="dropdown-option"
+                        data-value="3years"
+                        data-years="3"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">3 Years</span>
+                        </div>
+                        <p class="option-description">
+                          Medium-term growth potential
+                        </p>
+                      </div>
+                      <div
+                        class="dropdown-option"
+                        data-value="5years"
+                        data-years="5"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">5 Years</span>
+                        </div>
+                        <p class="option-description">
+                          Long-term wealth building
+                        </p>
+                      </div>
+                      <div
+                        class="dropdown-option"
+                        data-value="10years"
+                        data-years="10"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">10 Years</span>
+                        </div>
+                        <p class="option-description">
+                          Decade-long investment strategy
+                        </p>
+                      </div>
+                      <div
+                        class="dropdown-option"
+                        data-value="15years"
+                        data-years="15"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">15 Years</span>
+                        </div>
+                        <p class="option-description">
+                          Extended growth timeline
+                        </p>
+                      </div>
+                      <div
+                        class="dropdown-option"
+                        data-value="20years"
+                        data-years="20"
+                      >
+                        <div class="option-main">
+                          <span class="option-name">20 Years</span>
+                        </div>
+                        <p class="option-description">
+                          Maximum historical data
+                        </p>
+                      </div>
+                    </div>
+                    <div class="quick-select">
+                      <div class="quick-select-label">Quick Select:</div>
+                      <div class="quick-select-buttons">
+                        <button
+                          type="button"
+                          class="quick-button"
+                          data-value="1year"
+                        >
+                          1Y
+                        </button>
+                        <button
+                          type="button"
+                          class="quick-button"
+                          data-value="5years"
+                        >
+                          5Y
+                        </button>
+                        <button
+                          type="button"
+                          class="quick-button"
+                          data-value="10years"
+                        >
+                          10Y
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-error" id="timeframeError"></div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-group">
+                <button
+                  type="submit"
+                  class="submit-button"
+                  id="submitButton"
+                  disabled
+                >
+                  Fill all fields to simulate
+                </button>
+              </div>
+
+              <!-- Progress Indicator -->
+              <div class="progress-indicator">
+                <div class="progress-dot" id="amountDot"></div>
+                <div class="progress-dot" id="companyDot"></div>
+                <div class="progress-dot" id="timeframeDot"></div>
+                <span class="progress-text" id="progressText"
+                  >0/3 fields completed</span
+                >
+              </div>
+            </form>
+          </div>
+
+          <!-- Right side - 3D Chart Image -->
+          <div class="chart-container">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a334aa8fe5cde548a181ae64ec603dbabbc0b61f?width=826"
+              alt="3D Investment Chart"
+              class="chart-image"
+            />
+          </div>
+        </div>
+
+        <!-- Sample Simulation Section -->
+        <div class="sample-simulation" id="sampleSimulation">
+          <h2 class="section-title">Sample Simulation</h2>
+          <div class="sample-card">
+            <p class="sample-label">Example</p>
+            <h3 class="sample-title">
+              ₹10,000 in Tech Titans Inc. for 5 years
+            </h3>
+            <div class="sample-content">
+              <p class="sample-description">
+                See how a ₹10,000 investment in Tech Titans Inc. would have
+                performed over the last 5 years.
+              </p>
+              <button class="sample-button" id="runSampleButton">
+                Run Sample Simulation
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulation Results Section -->
+        <div
+          class="simulation-results"
+          id="simulationResults"
+          style="display: none"
+        >
+          <!-- Results will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Overlay for dropdowns -->
+    <div class="dropdown-overlay" id="dropdownOverlay"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
