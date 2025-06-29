@@ -19,33 +19,28 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    180deg,
-    #000 0%,
-    #200d42 34.22%,
-    #4f21a1 64.9%,
-    #a46edb 81.78%
-  );
-  z-index: 1;
+  height: 150vh; /* taller to allow more space for background */
+  z-index: -1;
+
+  background-image: 
+    url('./Ellipse 2.svg'),
+    linear-gradient(
+      180deg,
+      #000000 30%,
+      #200d42 34.22%,
+      #4f21a1 64.9%,
+      #a46edb 81.78%
+    );
+
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* 👇 Move the image far down, near “Live Stocks” */
+  background-position: center 500px; 
 }
 
-.decorative-circle {
-  position: absolute;
-  left: -600px;
-  top: 460px;
-  width: 2483px;
-  height: 1014px;
-  border-radius: 50%;
-  border: 1px solid #b48cde;
-  background: radial-gradient(
-    51.38% 51.38% at 50% 50%,
-    #000 82.2%,
-    #9560eb 100%
-  );
-  opacity: 0.3;
-  z-index: 2;
-}
+
+
 
 .container {
   position: relative;
