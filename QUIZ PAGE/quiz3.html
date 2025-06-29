@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FinLit - Financial Literacy Quiz</title>
+    <link rel="stylesheet" href="./quiz1styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Twinkling Stars Background -->
+    <div class="stars-container">
+      <div class="stars stars-small"></div>
+      <div class="stars stars-medium"></div>
+      <div class="stars stars-large"></div>
+    </div>
+
+    <!-- Background Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <div class="header-content">
+            <!-- Logo Section -->
+            <div class="logo-section">
+              <div class="logo">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 14 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.2424 13.6667C10.3297 13.6667 9.53477 12.2795 9.1212 10.23C8.70767 12.2795 7.91273 13.6667 7 13.6667C6.08727 13.6667 5.29233 12.2795 4.8788 10.23C4.46523 12.2795 3.6703 13.6667 2.75757 13.6667C1.4187 13.6667 0.333333 10.6819 0.333333 7C0.333333 3.3181 1.4187 0.333333 2.75757 0.333333C3.6703 0.333333 4.46523 1.72048 4.8788 3.77C5.29233 1.72048 6.08727 0.333333 7 0.333333C7.91273 0.333333 8.70767 1.72048 9.1212 3.77C9.53477 1.72048 10.3297 0.333333 11.2424 0.333333C12.5813 0.333333 13.6667 3.3181 13.6667 7C13.6667 10.6819 12.5813 13.6667 11.2424 13.6667Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <h1>FinLit</h1>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navigation">
+              <a href="#" class="nav-link">Learn</a>
+              <a href="#" class="nav-link">Quiz</a>
+              <a href="#" class="nav-link">Community</a>
+            </nav>
+
+            <!-- Right Section -->
+            <div class="header-right">
+              <!-- Notification Bell -->
+              <button class="notification-btn">
+                <svg
+                  width="16"
+                  height="18"
+                  viewBox="0 0 16 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M15.3281 12.7453C14.8945 11.9984 14.25 9.88516 14.25 7.125C14.25 3.67322 11.4518 0.875 8 0.875C4.54822 0.875 1.75 3.67322 1.75 7.125C1.75 9.88594 1.10469 11.9984 0.671094 12.7453C0.445722 13.1318 0.444082 13.6092 0.666796 13.9973C0.889509 14.3853 1.30261 14.6247 1.75 14.625H4.93828C5.23556 16.0796 6.51529 17.1243 8 17.1243C9.48471 17.1243 10.7644 16.0796 11.0617 14.625H14.25C14.6972 14.6244 15.1101 14.3849 15.3326 13.9969C15.5551 13.609 15.5534 13.1317 15.3281 12.7453ZM8 15.875C7.20562 15.8748 6.49761 15.3739 6.23281 14.625H9.76719C9.50239 15.3739 8.79438 15.8748 8 15.875ZM1.75 13.375C2.35156 12.3406 3 9.94375 3 7.125C3 4.36358 5.23858 2.125 8 2.125C10.7614 2.125 13 4.36358 13 7.125C13 9.94141 13.6469 12.3383 14.25 13.375H1.75Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+
+              <!-- Profile Avatar -->
+              <div class="profile-avatar">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/92c3dac36a36c54b34e6ddd8c0dbe74490ccdbe6?width=80"
+                  alt="Profile"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Quiz Content -->
+      <main class="main">
+        <div class="quiz-container">
+          <!-- Quiz Header -->
+          <div class="quiz-header">
+            <h1 class="quiz-title">Quiz</h1>
+
+            <!-- Progress Section -->
+            <div class="progress-section">
+              <div class="progress-info">
+                <span class="progress-text">Question 1 of 4</span>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="progress-bar">
+                <div class="progress-fill" id="progress" style="width: 25%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Question -->
+          <div class="question-section">
+            <h2 class="question-title" id="question">
+               Which of the following is an example of revolving credit?
+            </h2>
+
+            <!-- Answer Options -->
+            <div class="options-container">
+            <label class="option">
+            <input type="radio" name="answer" value="0" />
+             <div class="radio-custom">
+               <div class="radio-selected"></div>
+              </div>
+             <span class="option-text">Car loan</span>
+             </label>
+
+
+              <label class="option">
+                <input type="radio" name="answer" value="1" />
+                <div class="radio-custom">
+                <div class="radio-selected"></div>
+              </div>
+                <span class="option-text">Home mortgage</span>
+              </label>
+
+              <label class="option">
+                <input type="radio" name="answer" value="2" />
+                <div class="radio-custom">
+                <div class="radio-selected"></div>
+              </div>
+                <span class="option-text">Credit card</span>
+              </label>
+
+              <label class="option">
+                <input type="radio" name="answer" value="3" />
+                <div class="radio-custom">
+                <div class="radio-selected"></div>
+              </div>
+                <span class="option-text">Student loan</span>
+              </label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-container">
+              <button class="submit-btn" id="submit">Submit</button>
+            </div>
+          </div>
+
+          <!-- Feedback Section -->
+          <div class="feedback-section">
+            <div class="feedback-content">
+              <h3 class="feedback-title" id="feedback">Feedback</h3>
+              <p class="feedback-text">
+                Correct! Revolving credit lets you borrow, repay, and borrow again—like a credit card—unlike loans that have fixed terms.
+              </p>
+            </div>
+
+            <!-- Did You Know Section -->
+            <div class="did-you-know">
+              <h3 class="did-you-know-title">💡 Did You Know?</h3>
+              <div class="speech-bubble">
+                <p class="did-you-know-text" id="did-you-know">
+                  Budgeting is like planning a road trip for your money. You
+                  decide where you want to go (your financial goals) and map out
+                  how to get there (your budget). Without a plan, you might end
+                  up lost or spending more than you intended!
+                </p>
+              </div>
+            </div>
+            <div class="next-container">
+            <button id="next" style="display: none;">Next</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./quiz3script.js"></script>
+  </body>
+</html>
