@@ -1,0 +1,401 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: black;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Background Elements */
+.background-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    #000 0%,
+    #200d42 34.22%,
+    #4f21a1 64.9%,
+    #a46edb 81.78%
+  );
+  z-index: 1;
+}
+
+.decorative-circle {
+  position: absolute;
+  left: -600px;
+  top: 460px;
+  width: 2483px;
+  height: 1014px;
+  border-radius: 50%;
+  border: 1px solid #b48cde;
+  background: radial-gradient(
+    51.38% 51.38% at 50% 50%,
+    #000 82.2%,
+    #9560eb 100%
+  );
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Header Styles */
+.news-bar {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    #feecff 0%,
+    #fecaff 11.71%,
+    #feb5ff 26.8%,
+    #ffdbe7 40.18%,
+    #fff4d6 49.22%,
+    #f3fcd7 58.71%,
+    #d2f5ee 71.29%,
+    #c3efff 84.44%,
+    #fbefff 100%
+  );
+}
+
+.news-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+.news-text .bold {
+  font-weight: 700;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-f {
+  color: #c084fc;
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+.logo-text {
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+/* Navigation Styles */
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-item {
+  color: white;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.nav-item:hover {
+  color: #c084fc;
+}
+
+.nav-item.active {
+  color: #c084fc;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 16px;
+  border-radius: 9999px;
+}
+
+/* User Profile */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.profile-icon {
+  width: 36px;
+  height: 40px;
+  background: #1f2937;
+  border-radius: 8px;
+}
+
+/* Main Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 32px;
+}
+
+/* Welcome Section */
+.welcome-section {
+  margin: 64px 0 32px;
+}
+
+.welcome-title {
+  color: white;
+  font-family: "Source Serif Pro", serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.welcome-subtitle {
+  color: #9ca3af;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Progress Bar */
+.progress-section {
+  width: 100%;
+  max-width: 512px;
+  margin-bottom: 64px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #374151;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: white;
+  border-radius: 9999px;
+  width: 68%;
+  transition: width 0.5s ease;
+}
+
+/* Stocks Section */
+.stocks-section {
+  width: 100%;
+  max-width: 1152px;
+}
+
+.stocks-title {
+  color: white;
+  font-family: "Special Elite", monospace;
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 48px;
+}
+
+.stocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  justify-items: center;
+}
+
+/* Stock Card Styles */
+.stock-card {
+  width: 100%;
+  max-width: 448px;
+  height: 112px;
+  background: black;
+  border: 1px solid #6b7280;
+  border-radius: 12px;
+  box-shadow:
+    0px -5px 75px 0px rgba(117, 64, 199, 0.3),
+    0px 5px 75px 0px rgba(117, 64, 199, 0.3);
+  position: relative;
+}
+
+.stock-info {
+  position: absolute;
+  left: 48px;
+  top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stock-logo {
+  width: 40px;
+  height: 40px;
+  background: #374151;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stock-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stock-symbol {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.stock-company {
+  color: #929292;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+}
+
+/* Stock Price and Change */
+.stock-price-section {
+  position: absolute;
+  right: 48px;
+  top: 16px;
+  text-align: right;
+}
+
+.stock-price {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.stock-change {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.trend-icon {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trend-icon.down {
+  transform: rotate(180deg);
+}
+
+.change-percent {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.change-percent.positive {
+  color: #05c702;
+}
+
+.change-percent.negative {
+  color: #fc1a1a;
+}
+
+.stock-chart {
+  position: absolute;
+  right: 12px;
+  top: 0;
+  opacity: 0.7;
+}
+
+.placeholder-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .navigation {
+    gap: 24px;
+  }
+
+  .nav-item {
+    font-size: 18px;
+  }
+
+  .welcome-title {
+    font-size: 36px;
+  }
+
+  .welcome-subtitle {
+    font-size: 18px;
+  }
+
+  .stocks-title {
+    font-size: 28px;
+  }
+
+  .stocks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .main-content {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation {
+    display: none;
+  }
+
+  .stocks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-card {
+    max-width: 100%;
+  }
+}
