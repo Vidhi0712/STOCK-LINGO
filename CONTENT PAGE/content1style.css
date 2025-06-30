@@ -232,23 +232,24 @@ body {
   padding: 12px 0;
 }
 
-.logo-section {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 }
 
-.logo-text {
-  color: #fff;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 28px;
+.logo-f {
+  color: #c084fc;
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+
+.logo-img {
+  height: px;
+  max-width: 140px;
+  object-fit: contain;
 }
 
 .nav-section {
