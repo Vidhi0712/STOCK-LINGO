@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       question: " Which credit factor has the highest weight in most credit scoring models?",
       options: [
-         ",Length of credit history",
+         "Length of credit history",
          "Payment history",
          "New credit inquiries",
          "Types of credit used"

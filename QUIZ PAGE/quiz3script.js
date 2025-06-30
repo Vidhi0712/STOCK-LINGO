@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       question: "Which of the following is an example of revolving credit?",
       options: [
-         ",Car loan",
+         "Car loan",
          "Home mortgage",
          "Credit card",
          "Student loan"
@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       question: " How does a diverse credit mix affect your credit score?",
       options: [
-       ",It has no effect",
-       ",It lowers your score",
-       ",It helps improve your score",
-       ",It only matters if you have bad credit"
+       "It has no effect",
+       "It lowers your score",
+       "It helps improve your score",
+       "It only matters if you have bad credit"
       ],
       correct: 2,
       explanation: "Credit mix counts for about 10% of your score. Having both revolving and installment credit can show you're a responsible borrower."
@@ -154,7 +154,7 @@ function showResults() {
         <button onclick="location.reload()" style="margin: 8px; padding: 10px 16px; background-color: #8c45ff; color: #fff; border: none; border-radius: 12px; font-weight: 600;">Restart Quiz</button>
         ${
           canProceed
-            ? `<a href="" style="margin: 8px; padding: 10px 16px; background-color: #28a745; color: #fff; border: none; border-radius: 12px; font-weight: 600; text-decoration: none; display: inline-block;">Move to Next Module</a>`
+            ? `<a href="../MODULES SYLLABUS/modules.html" style="margin: 8px; padding: 10px 16px; background-color: #28a745; color: #fff; border: none; border-radius: 12px; font-weight: 600; text-decoration: none; display: inline-block;">Move to Next Module</a>`
             : `<button disabled style="margin: 8px; padding: 10px 16px; background-color: #ccc; color: #666; border: none; border-radius: 12px; font-weight: 600;">Score > 3 to Proceed</button>`
         }
       </div>
