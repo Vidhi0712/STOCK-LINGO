@@ -51,13 +51,13 @@
         <div class="login-container">
           <h1 class="login-title">Log in</h1>
 
-          <form class="login-form">
+          <form class="login-form" onsubmit="handleLogin(event)">
             <!-- Email field -->
             <div class="form-group">
               <label class="form-label">
                 Email<span class="required">*</span>
               </label>
-              <input type="email" class="form-input" required />
+              <input type="email" name="email" class="form-input" required />
             </div>
 
             <!-- Password field -->
@@ -65,7 +65,7 @@
               <label class="form-label">
                 Password<span class="required">*</span>
               </label>
-              <input type="password" class="form-input" required />
+              <input type="password" name="password" class="form-input" required />
             </div>
 
             <!-- Login button -->
@@ -92,5 +92,6 @@
         </div>
       </nav>
     </div>
+    <script src="login.js"></script>
   </body>
 </html>
