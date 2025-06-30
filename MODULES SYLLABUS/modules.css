@@ -690,26 +690,28 @@ select {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  height: 100%;
 }
 
 .logo-icon {
-  width: 16px;
-  height: 16px;
+  display: flex;
+  align-items: center;
+  height: 100px; /* matches a typical navbar height */
   flex-shrink: 0;
   transition: transform var(--transition-normal);
 }
+
+.logo-img {
+  height: 100%;
+  max-height: 280px; /* controls the logo image height */
+  object-fit: contain;
+}
+
 
 .logo-icon:hover {
   transform: scale(1.1) rotate(10deg);
 }
 
-.logo-text {
-  color: var(--color-white);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-xl);
-  line-height: var(--line-height-tight);
-  transition: color var(--transition-normal);
-}
 
 .logo-section:hover .logo-text {
   color: var(--color-purple-primary);
