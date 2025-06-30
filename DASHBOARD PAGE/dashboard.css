@@ -11,6 +11,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  color: white;
 }
 
 /* Background Elements */
@@ -19,9 +20,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 150vh; /* taller to allow more space for background */
+  height: 150vh;
   z-index: -1;
-
   background-image: 
     url('./Ellipse 2.svg'),
     linear-gradient(
@@ -31,16 +31,10 @@ body {
       #4f21a1 64.9%,
       #a46edb 81.78%
     );
-
   background-repeat: no-repeat;
   background-size: cover;
-
-  /* 👇 Move the image far down, near “Live Stocks” */
-  background-position: center 500px; 
+  background-position: center 500px;
 }
-
-
-
 
 .container {
   position: relative;
@@ -48,48 +42,17 @@ body {
 }
 
 /* Header Styles */
-.news-bar {
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 24px;
-  text-align: center;
-  background: linear-gradient(
-    90deg,
-    #feecff 0%,
-    #fecaff 11.71%,
-    #feb5ff 26.8%,
-    #ffdbe7 40.18%,
-    #fff4d6 49.22%,
-    #f3fcd7 58.71%,
-    #d2f5ee 71.29%,
-    #c3efff 84.44%,
-    #fbefff 100%
-  );
-}
-
-.news-text {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 18px;
-  color: black;
-}
-
-.news-text .bold {
-  font-weight: 700;
-}
-
 .main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 32px;
+  padding: 0px 0px;
 }
 
-/* Logo Styles */
 .logo {
   display: flex;
   align-items: center;
+  gap: 9px;
 }
 
 .logo-f {
@@ -99,14 +62,15 @@ body {
   font-weight: 500;
 }
 
-.logo-text {
-  color: white;
-  font-family: "Outfit", sans-serif;
-  font-size: 24px;
-  font-weight: 500;
+
+.logo-img {
+  height: px;
+  max-width: 140px;
+  object-fit: contain;
 }
 
-/* Navigation Styles */
+
+
 .navigation {
   display: flex;
   align-items: center;
@@ -116,7 +80,7 @@ body {
 .nav-item {
   color: white;
   font-family: "Outfit", sans-serif;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 500;
   cursor: pointer;
   transition: color 0.15s ease;
@@ -133,7 +97,6 @@ body {
   border-radius: 9999px;
 }
 
-/* User Profile */
 .user-profile {
   display: flex;
   align-items: center;
@@ -153,6 +116,42 @@ body {
   border-radius: 8px;
 }
 
+/* News Bar Positioned Below Nav */
+.news-bar {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    #feecff 0%,
+    #fecaff 11.71%,
+    #feb5ff 26.8%,
+    #ffdbe7 40.18%,
+    #fff4d6 49.22%,
+    #f3fcd7 58.71%,
+    #d2f5ee 71.29%,
+    #c3efff 84.44%,
+    #fbefff 100%
+  );
+  border-radius: 6px;
+  margin: 0px 0px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.news-text {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  color: black;
+}
+
+.news-text .bold {
+  font-weight: 700;
+}
+
 /* Main Content */
 .main-content {
   display: flex;
@@ -162,7 +161,6 @@ body {
   padding: 0 32px;
 }
 
-/* Welcome Section */
 .welcome-section {
   margin: 64px 0 32px;
 }
@@ -183,7 +181,6 @@ body {
   font-weight: 400;
 }
 
-/* Progress Bar */
 .progress-section {
   width: 100%;
   max-width: 512px;
@@ -205,6 +202,7 @@ body {
   width: 68%;
   transition: width 0.5s ease;
 }
+
 a {
   color: #fff;
   text-decoration: none;
@@ -217,11 +215,11 @@ a:hover {
   cursor: pointer;
 }
 
-
 /* Stocks Section */
 .stocks-section {
   width: 100%;
   max-width: 1152px;
+  margin-top: 32px;
 }
 
 .stocks-title {
@@ -229,80 +227,64 @@ a:hover {
   font-family: "Special Elite", monospace;
   font-size: 36px;
   font-weight: 400;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .stocks-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
   justify-items: center;
 }
 
-/* Stock Card Styles */
 .stock-card {
   width: 100%;
-  max-width: 448px;
   height: 112px;
-  background: black;
+  background: #000;
   border: 1px solid #6b7280;
   border-radius: 12px;
   box-shadow:
     0px -5px 75px 0px rgba(117, 64, 199, 0.3),
     0px 5px 75px 0px rgba(117, 64, 199, 0.3);
+  padding: 16px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  transition: transform 0.2s;
   position: relative;
+}
+
+.stock-card:hover {
+  transform: scale(1.02);
 }
 
 .stock-info {
   position: absolute;
-  left: 48px;
+  left: 16px;
   top: 16px;
   display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.stock-logo {
-  width: 40px;
-  height: 40px;
-  background: #374151;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.stock-details {
-  display: flex;
   flex-direction: column;
-  gap: 2px;
+  align-items: flex-start;
+  gap: 4px;
 }
 
 .stock-symbol {
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .stock-company {
   color: #929292;
-  font-family: "Inter", sans-serif;
-  font-size: 11px;
-  font-weight: 300;
+  font-size: 12px;
 }
 
-/* Stock Price and Change */
 .stock-price-section {
   position: absolute;
-  right: 48px;
+  right: 16px;
   top: 16px;
   text-align: right;
 }
 
 .stock-price {
-  color: white;
-  font-family: "Inter", sans-serif;
   font-size: 17px;
   margin-bottom: 8px;
 }
@@ -314,54 +296,26 @@ a:hover {
   justify-content: flex-end;
 }
 
-.trend-icon {
-  width: 27px;
-  height: 27px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.positive {
+  color: #05C702;
 }
 
-.trend-icon.down {
-  transform: rotate(180deg);
+.negative {
+  color: #FC1A1A;
 }
 
-.change-percent {
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-}
-
-.change-percent.positive {
-  color: #05c702;
-}
-
-.change-percent.negative {
-  color: #fc1a1a;
-}
-
-.stock-chart {
-  position: absolute;
-  right: 12px;
-  top: 0;
-  opacity: 0.7;
-}
-
-.placeholder-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #6b7280;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column;
     gap: 16px;
     padding: 16px;
   }
+
+  .logo {
+  width: 100%;
+  justify-content: center;
+}
+
 
   .navigation {
     gap: 24px;
@@ -384,9 +338,12 @@ a:hover {
   }
 
   .stocks-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* force 3 per row */
+  gap: 24px;
+  justify-items: center;
+}
+
 
   .main-content {
     padding: 0 16px;
@@ -398,11 +355,30 @@ a:hover {
     display: none;
   }
 
-  .stocks-grid {
-    grid-template-columns: 1fr;
-  }
-
+  
+  
   .stock-card {
     max-width: 100%;
   }
+}
+
+.stock-chart {
+  height: 60px;
+  width: 100%;
+  margin-top: 8px;
+}
+.curved-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 320px;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.curved-background svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
