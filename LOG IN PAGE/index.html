@@ -1,52 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinBud - Log In</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>FinBud - Login</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Enhanced stars background -->
-      <div class="stars-background"></div>
-      <div class="stars-layer-1"></div>
-      <div class="stars-layer-2"></div>
-      <div class="stars-layer-3"></div>
+    <div id="page1">
+            <nav>
+                <img src="Landing page/finwise.png" alt="FinWise Logo" class="logo">
 
-      <!-- Purple gradient circles -->
-      <div class="gradient-background">
-        <div class="gradient-circle-1"></div>
-        <div class="gradient-circle-2"></div>
+                <div id="nav-part2">
+                    <h4><a href="../Landing page/index.html">Home</a></h4>
+                    <h4><a href="../SIGN UP PAGE/index.html">Sign Up</a></h4>
+                </div>
+                <h3>Menu</h3>
+            
+            </nav>
+    <div class="circle-bg"></div>
+
+    <div class="login-container">
+      <div class="welcome-text">
+        <h1>WELCOME BACK!</h1>
+        <p>Learn, manage and grow your wealth like never before.</p>
       </div>
 
-      <!-- Header -->
-      <header class="header">
-        <!-- Logo -->
-        <div class="logo">
-          <span class="logo-f">F</span>
-          <span class="logo-text">inBud</span>
-        </div>
+      <div class="form-area">
+        <h2>Login</h2>
+        <form action="#" method="post">
+          <div class="input-group">
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="username" required />
+          </div>
 
-        <!-- Navigation -->
-       <nav class="navigation">
-         <a href="../Landing page/index.html"" class="nav-item active">Home</a>
-         <a href="../Landing page/index.html" class="nav-item">Contacts</a>
-       </nav>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
 
+          <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
 
-        <!-- Sign up button -->
-         <a href="../SIGN UP PAGE/index.html">
-        <button class="signup-btn">Sign up</button>
-        </a>
-      </header>
+          <button type="submit" class="btn-primary"><b>Login</b></button>
+          
 
+<<<<<<< Updated upstream
       <!-- Main content -->
       <main class="main-content">
   <div class="login-container">
@@ -94,6 +99,13 @@
           <span class="mobile-nav-item">Contacts</span>
         </div>
       </nav>
+=======
+          <div class="signup-link">
+            Don't have an account? <a href="../SIGN UP PAGE/index.html">Sign up</a>
+          </div>
+        </form>
+      </div>
+>>>>>>> Stashed changes
     </div>
     <script src="login.js"></script>
   </body>

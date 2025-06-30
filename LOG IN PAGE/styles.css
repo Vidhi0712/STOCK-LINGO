@@ -1,4 +1,4 @@
-/* Reset and base styles */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,471 +6,308 @@
 }
 
 body {
-  font-family:
-    "Outfit",
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
+  font-family: "Outfit", sans-serif;
   background-color: #000;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-.container {
+  color: white;
   min-height: 100vh;
-  position: relative;
   overflow: hidden;
+  position: relative;
+  /* REMOVE these ↓↓↓ */
+  display: unset;
+  align-items: unset;
+  justify-content: unset;
 }
 
-/* Enhanced stars background with multiple layers */
-.stars-background {
-  position: absolute;
-  top: 0;
-  left: 0;
+
+#page1 {
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
-  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/4b5fc1e7ce9e3ed76402137fd6adb0a212b16c94?width=2880");
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(41, 21, 71, 0.8)),
+    url('image.jpg') center/cover no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.6;
-  z-index: 1;
-}
-
-.stars-layer-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(2px 2px at 20px 30px, #fff, transparent),
-    radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-    radial-gradient(1px 1px at 90px 40px, #fff, transparent),
-    radial-gradient(1px 1px at 130px 80px, #fff, transparent),
-    radial-gradient(2px 2px at 160px 30px, #fff, transparent);
-  background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: twinkle 4s infinite;
-  opacity: 0.8;
-  z-index: 2;
-}
-
-.stars-layer-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(1px 1px at 25px 25px, #9e52ee, transparent),
-    radial-gradient(2px 2px at 80px 50px, #9e52ee, transparent),
-    radial-gradient(1px 1px at 120px 20px, #9e52ee, transparent),
-    radial-gradient(1px 1px at 170px 60px, #9e52ee, transparent);
-  background-repeat: repeat;
-  background-size: 250px 150px;
-  animation: twinkle 6s infinite reverse;
-  opacity: 0.6;
-  z-index: 2;
-}
-
-.stars-layer-3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(1px 1px at 50px 50px, #5153ee, transparent),
-    radial-gradient(1px 1px at 100px 100px, #5153ee, transparent),
-    radial-gradient(2px 2px at 150px 75px, #5153ee, transparent);
-  background-repeat: repeat;
-  background-size: 300px 200px;
-  animation: twinkle 8s infinite;
-  opacity: 0.4;
-  z-index: 2;
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.4;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-/* Purple gradient circles */
-.gradient-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
-}
-
-.gradient-circle-1 {
-  position: absolute;
-  width: 1140px;
-  height: 1100px;
-  border-radius: 50%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(158, 82, 238, 0.6) 0%,
-    rgba(90, 47, 136, 0) 100%
-  );
-  left: 162px;
-  top: -19px;
-  opacity: 0.6;
-}
-
-.gradient-circle-2 {
-  position: absolute;
-  width: 1140px;
-  height: 936px;
-  border-radius: 50%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(158, 82, 238, 0.27) 0%,
-    rgba(90, 47, 136, 0) 100%
-  );
-  left: 81px;
-  top: 88px;
-  opacity: 0.6;
-}
-
-/* Header */
-.header {
+  color: aliceblue;
   position: relative;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px 32px;
-}
+  padding: 0 2vw;
 
-/* Logo */
-.logo {
-  display: flex;
-  align-items: flex-end;
-}
-
-.logo-f {
-  color: #9e52ee;
-  font-size: 56px;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.logo-text {
-  color: #fff;
-  font-size: 27px;
-  font-weight: 500;
-  margin-left: 8px;
-}
-
-/* Navigation with animations */
-.navigation {
-  display: flex;
-  align-items: center;
-  gap: 80px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.nav-item {
-  position: relative;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 4px 16px;
-  border-radius: 20px;
-}
-
-.nav-item.active {
-  background: rgba(255, 247, 247, 0.1);
-}
-
-.nav-item:not(.active):hover {
-  color: #9e52ee;
-  transform: translateY(-2px);
-  background: rgba(158, 82, 238, 0.1);
-}
-
-.nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #9e52ee;
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-}
-
-.nav-item:hover::after {
-  width: 100%;
-}
-
-/* Animated hover effects for Learn, Practice, Contacts */
-.nav-item:nth-child(2):hover {
-  animation: bounce 0.6s ease-in-out;
-}
-
-.nav-item:nth-child(3):hover {
-  animation: pulse 0.6s ease-in-out;
-}
-
-.nav-item:nth-child(4):hover {
-  animation: shake 0.6s ease-in-out;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes shake {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-4px);
-  }
-  75% {
-    transform: translateX(4px);
-  }
-}
-
-/* Sign up button */
-.signup-btn {
-  padding: 12px 24px;
-  border-radius: 30px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(145, 41, 255, 0.6) 0%,
-    rgba(161, 41, 127, 0.54) 100%
-  );
-  color: #fff;
-  font-size: 20px;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.signup-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(158, 82, 238, 0.3);
-}
-
-/* Main content */
-.main-content {
-  position: relative;
-  z-index: 10;
+  /* 🟣 ADD THIS TO CENTER CONTENT */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 120px);
-  padding: 0 16px;
 }
 
-/* Login container - reduced width */
+
+.logo {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1vw 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  background: transparent; /* or semi-dark for better visibility */
+}
+
+#page1 {
+  padding-top: 100px; /* Adjust based on nav height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 100px); /* minus navbar height */
+  flex-direction: column;
+}
+
+
+#nav-part2 {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+#nav-part2 h4 {
+    padding: 10px 20px;
+    border: 1px solid #0000003c;
+    border-radius: 50px;
+    font-weight: 500;
+    color: #141212bb;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 18px;
+    overflow: hidden;
+    
+}
+
+#nav-part2 h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #a770ef, #f6a9d0, #fddb92);
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+#nav-part2 h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+#nav-part2 h4 a {
+    color: #ffffffbb;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+#nav-part2 h4:hover a {
+    color: #222020;
+}
+
+nav h3 {
+    display: none;
+}
+
+#center {
+  height: 65vh;
+  width: 100%;
+  text-align: center;
+  padding: 4vw 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(79, 33, 161);
+}
+
+/* Purple Circle Background */
+.circle-bg {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle at center, #9e52ee 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* Login Container Layout */
 .login-container {
-  width: 100%;
-  max-width: 450px; /* Reduced from 545px */
-  background: #000;
-  border-radius: 50px;
-  padding: 48px;
-  border: 1px solid rgba(158, 82, 238, 0.2);
+  display: flex;
+  max-width: 1000px;
+  width: 90%;
+  background-color: #0a0118;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(158, 82, 238, 0.2);
 }
 
-.login-title {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 500;
-  text-align: center;
-  margin-bottom: 64px;
-}
-
-/* Form styles */
-.login-form {
+/* Welcome Section */
+.welcome-text {
+  flex: 1;
+  background: linear-gradient(to bottom right, #3b0b60, #1b042e);
+  padding: 60px 40px;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  justify-content: center;
 }
 
-.form-group {
+.welcome-text h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #c084fc, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.welcome-text p {
+  font-size: 1.1rem;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* Form Section */
+.form-area {
+  flex: 1;
+  background-color: #000;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-area h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.input-group {
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.form-label {
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
+.input-group label {
   margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #ccc;
 }
 
-.required {
-  color: #e71414;
-}
-
-.form-input {
-  width: 100%;
-  height: 37px;
-  background: #d9d9d9;
+.input-group input {
+  padding: 12px 14px;
   border-radius: 10px;
   border: none;
-  padding: 0 12px;
-  color: #000;
-  font-family: inherit;
-  transition: all 0.3s ease;
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+  transition: border 0.3s ease;
 }
 
-.form-input:focus {
+.input-group input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #9e52ee;
+  border: 2px solid #9e52ee;
 }
 
-.form-submit {
-  padding-top: 32px;
-  text-align: center;
+/* Options Row */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 20px;
 }
 
-.login-btn {
-  width: 121px;
-  height: 28px;
-  background: #9e52ee;
+.options a {
+  color: #9e52ee;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
   border-radius: 10px;
-  color: #fff;
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 500;
-  border: none;
+  margin-bottom: 15px;
   cursor: pointer;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
+  border: none;
 }
 
-.login-btn:hover {
-  background: #b366f0;
-  transform: translateY(-1px);
+.btn-primary {
+  background-color: #9e52ee;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #a962f7;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #9e52ee;
+  border: 1.5px solid #9e52ee;
+}
+
+.btn-secondary:hover {
+  background-color: #1f032e;
 }
 
 /* Sign up link */
 .signup-link {
+  font-size: 0.9rem;
   text-align: center;
-  margin-top: 24px;
-  font-size: 10px;
+  color: #aaa;
 }
 
-.signup-text {
-  color: #fff;
-}
-
-.signup-link-text {
-  color: #5153ee;
-  text-decoration: underline;
-  transition: color 0.3s ease;
-}
-
-.signup-link-text:hover {
-  color: #7b7bff;
-}
-
-/* Mobile navigation */
-.mobile-navigation {
-  display: none;
-  position: fixed;
-  bottom: 16px;
-  left: 16px;
-  right: 16px;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  padding: 16px;
-  z-index: 20;
-}
-
-.mobile-nav-items {
-  display: flex;
-  justify-content: space-around;
-  font-size: 14px;
-}
-
-.mobile-nav-item {
-  color: #fff;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.mobile-nav-item.active {
+.signup-link a {
   color: #9e52ee;
+  text-decoration: none;
   font-weight: 500;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .header {
-    padding: 16px;
-  }
-
-  .logo-f {
-    font-size: 40px;
-  }
-
-  .logo-text {
-    font-size: 20px;
-  }
-
-  .navigation {
-    display: none;
-  }
-
-  .signup-btn {
-    font-size: 16px;
-    padding: 10px 20px;
-  }
-
-  .login-container {
-    max-width: 380px; /* Even smaller on mobile */
-    padding: 32px 24px;
-  }
-
-  .mobile-navigation {
-    display: block;
-  }
+.signup-link a:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 480px) {
+/* Responsive Design */
+@media (max-width: 768px) {
   .login-container {
-    max-width: 320px; /* Very compact on small screens */
-    padding: 24px;
-    margin: 0 8px;
+    flex-direction: column;
+    width: 90%;
   }
 
-  .login-title {
-    font-size: 24px;
-    margin-bottom: 48px;
+  .welcome-text, .form-area {
+    padding: 40px 20px;
+  }
+
+  .welcome-text h1 {
+    font-size: 2.4rem;
   }
 }

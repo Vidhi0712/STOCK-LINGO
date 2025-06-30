@@ -1,11 +1,9 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinBud - Finance Learning Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>FinBud - Login</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -13,94 +11,60 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Star Field Background -->
-      <div class="star-field" id="starField"></div>
+    <div id="page1">
+            <nav>
+                <img src="../Landing page/finwise.png" alt="FinWise Logo" class="logo">
 
-      <!-- Purple Gradient Orbs -->
-      <div class="gradient-orb gradient-orb-1"></div>
-      <div class="gradient-orb gradient-orb-2"></div>
+                <div id="nav-part2">
+                    <h4><a href="../Landing page/index.html">Home</a></h4>
+                    <h4><a href="../LOG IN PAGE/index.html">Login</a></h4>
+                </div>
+                <h3>Menu</h3>
+            
+            </nav>
+    <div class="circle-bg"></div>
 
-      <!-- Purple Cubes Image -->
-      <img
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/0930a83b64225f414ee95b01f90647c900d98057?width=1196"
-        alt="purple-composition2 2"
-        class="cubes-image"
-      />
+    <div class="login-container">
+      <div class="welcome-text">
+        <h1>WELCOME</h1>
+        <p>Your trusted personal finance assistant. Learn, manage and grow your wealth like never before. Let's get started.</p>
+      </div>
 
-      <!-- Navigation Header -->
-      <header class="header">
-        <!-- Logo -->
-        <div class="logo">
-          <span class="logo-f">F</span>
-          <span class="logo-text">inBud</span>
-        </div>
+      <div class="form-area">
+        <h2>Sign Up</h2>
+        <form action="#" method="post">
+          <div class="input-group">
+            <label for="username">User Name</label>
+            <input type="text" id="username" name="username" required />
+          </div>
 
-        <!-- Navigation Menu -->
-        <nav class="navigation">
-          <a href="../Landing page/index.html" class="nav-item">Home</a>
-          <a href="../Landing page/index.html" class="nav-item">Contacts</a>
-        </nav>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="input-group">
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" id="confirm-password" name="confirm-password" required />
+  </div>
 
-        <!-- Login Button -->
-        <a href="../LOG IN PAGE/index.html" class="login-btn">Login</a>
+          <div class="options">
+            <label><input type="checkbox" /> Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
 
-      </header>
+          <button type="submit" class="btn-primary">Sign up</button>
+          
 
-      <!-- Main Signup Form -->
-      <main class="main-content">
-        <div class="signup-container">
-          <!-- Signup Title -->
-          <h1 class="signup-title">Sign up</h1>
-
-          <!-- Signup Form -->
-          <form class="signup-form" onsubmit="handleSubmit(event)">
-             <form class="signup-form" action="../DASHBOARD PAGE/dashboard2.html" method="get"></form>
-            <!-- Name Field -->
-            <div class="form-group">
-              <label class="form-label">
-                Name<span class="required">*</span>
-              </label>
-              <input type="text" name="name" class="form-input" required />
-            </div>
-
-            <!-- Email Field -->
-            <div class="form-group">
-              <label class="form-label">
-                Email<span class="required">*</span>
-              </label>
-              <input type="email" name="email" class="form-input" required />
-            </div>
-
-            <!-- Password Field -->
-            <div class="form-group">
-              <label class="form-label">
-                Password<span class="required">*</span>
-              </label>
-              <input
-                type="password"
-                name="password"
-                class="form-input"
-                required
-              />
-            </div>
-
-            <!-- Already have account link -->
-            <div class="login-link">
-              <span class="login-text">Already have an account? </span>
-              <a href="../LOG IN PAGE/index.html" class="login-anchor">Log in</a>
-            </div>
-
-            <!-- Signup Button -->
-            <div class="button-container">
-                <a href="../DASHBOARD PAGE/dashboard2.html">
-              <button type="submit" class="signup-btn">Sign up</button></a>
-            </div>
-          </form>
-        </div>
-      </main>
+          <div class="signup-link">
+            Already have an account? <a href="../LOG IN PAGE/index.html">Login</a>
+          </div>
+        </form>
+      </div>
     </div>
+<<<<<<< Updated upstream
 
     <script src="signup.js"></script>
+=======
+>>>>>>> Stashed changes
   </body>
 </html>
