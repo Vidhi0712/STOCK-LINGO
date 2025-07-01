@@ -157,11 +157,14 @@ html, body {
   text-align: center;
 }
 
-canvas {
+canvas#donutChart {
+  width: 100% !important;
+  height: 350px !important;
+  display: block;
+  margin: 2rem auto 0;
   max-width: 100%;
-  height: auto;
-  margin-top: 2rem;
 }
+
 
 .suggestion-section {
   margin-top: 3rem;
@@ -178,23 +181,46 @@ canvas {
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
-
-.chart-container {
-  background-color: #1f1c2d;
-  border-radius: 15px;
-  padding: 2rem 1rem;
-  margin: 3rem auto;
-  max-width: 700px;
-  width: 90%;
-  box-shadow: 0 0 10px rgba(162, 89, 255, 0.1);
-  text-align: center;
+.filter-controls {
+  text-align: right;
+  margin-bottom: 1rem;
 }
 
-#lineChart {
-  width: 100%;
-  height: 350px;
-  margin: 0 auto;
+.filter-controls label {
+  margin-right: 0.5rem;
+  font-weight: 500;
+}
+
+.filter-controls select {
+  margin-right: 1rem;
+  padding: 0.4rem 0.8rem;
+  background: #1f1c2d;
+  color: #ccc;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-family: 'Inter', sans-serif;
+}
+
+
+.filter-controls select::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+
+#backButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #a259ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
   display: block;
-  filter: drop-shadow(0 0 4px rgba(162, 89, 255, 0.3));
-  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-logo img {
+  height: 32px;
+  vertical-align: middle;
 }

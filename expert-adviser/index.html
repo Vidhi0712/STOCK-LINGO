@@ -47,8 +47,29 @@
     <!-- Chart Section -->
     <div class="chart-container">
       <h2>Spending Breakdown</h2>
-      <canvas id="lineChart"></canvas>
+    <div class="filter-controls">
+  <!-- Category Dropdown -->
+  <label for="categorySelect">Category:</label>
+  <select id="categorySelect" onchange="updateChart()">
+    <option value="all">All Categories</option>
+    <option value="essential">Essentials</option>
+    <option value="lifestyle">Lifestyle</option>
+  </select>
 
+  <!-- Compare With Dropdown -->
+  <label for="compareSelect">Compare With:</label>
+  <select id="compareSelect" onchange="updateChart()">
+    <option value="none">None</option>
+    <option value="budget">Budget</option>
+    <option value="lastMonth">Last Month</option>
+  </select>
+</div>
+
+<canvas id="donutChart"></canvas>
+<button id="backButton" onclick="goBack()" style="display:none;">⬅ Back</button>
+
+
+      
     </div>
 
     <!-- Suggestions -->
@@ -61,6 +82,91 @@
     </div>
   </div>
 
+  <script src="script.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Advisor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">
+        <div class="nav-logo">
+  <img src="../public/landing/finwise.png" alt="Logo" />
+</div>
+
+
+    <ul class="nav-links">
+      <li><a href="../public/dashboard/dashboard1.html">Dashboard</a></li>
+      <li><a href="../public/modules/modules.html">Modules</a></li>
+      <li><a href="../public/stimulator/index.html">Simulator</a></li>
+      <li><a href="#" class="./expert-adviser/index.html">Adviser</a></li>
+    </ul>
+    <a class="nav-profile" href="../public/login/index.html" target="_blank">
+  <img src="https://i.ibb.co/Hr7W7sJ/user-icon.png" alt="Profile" />
+</a>
+
+  </nav>
+
+
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="title">Your Personal Expense Advisor</div>
+    <div class="subtitle">
+      Link your bank account to unlock personalized insights and recommendations.<br>
+      Explore your financial universe with FinWise.
+    </div>
+    <button class="connect-btn">Connect your account</button>
+
+    <!-- Chart Section -->
+    <div class="chart-container">
+      <h2>Spending Breakdown</h2>
+
+      <!-- Filters -->
+      <div class="filter-controls">
+        <!-- Category Dropdown -->
+        <label for="categorySelect">Category:</label>
+        <select id="categorySelect" onchange="updateChart()">
+          <option value="all">All Categories</option>
+          <option value="essential">Essentials</option>
+          <option value="lifestyle">Lifestyle</option>
+        </select>
+
+        <!-- Compare With Dropdown -->
+        <label for="compareSelect">Compare With:</label>
+        <select id="compareSelect" onchange="updateChart()">
+          <option value="none">None</option>
+          <option value="budget">Budget</option>
+          <option value="lastMonth">Last Month</option>
+        </select>
+      </div>
+
+      <!-- Chart Canvas -->
+      <canvas id="donutChart"></canvas>
+      <button id="backButton" onclick="goBack()" style="display:none;">⬅ Back</button>
+    </div>
+
+    <!-- Suggestions -->
+    <div class="suggestion-section">
+      <h2>💡 Insight:</h2>
+      <p>Spending is highest on Shopping, Travel, and Entertainment, while Utilities are the lowest.</p>
+
+      <h2>📉 Recommendation:</h2>
+      <p>Reduce spending on non-essentials like shopping and entertainment. Prioritize needs (like utilities) and consider saving or investing the extra money.</p>
+    </div>
+  </div>
+
+  <!-- JavaScript File -->
   <script src="script.js"></script>
 </body>
 </html>
