@@ -79,16 +79,38 @@ body {
   gap: 1rem;
 }
 
-.logo-icon {
-  width: 1rem;
-  height: 1rem;
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 100%;
 }
 
-.logo-text {
-  color: white;
-  font-weight: 700;
-  font-size: 1.125rem;
+.logo-icon {
+  display: flex;
+  align-items: center;
+  height: 100px; /* matches a typical navbar height */
+  flex-shrink: 0;
+  transition: transform var(--transition-normal);
 }
+
+.logo-img {
+  height: 100%;
+  max-height: 280px; /* controls the logo image height */
+  object-fit: contain;
+}
+
+
+.logo-icon:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+
+.logo-section:hover .logo-text {
+  color: var(--color-purple-primary);
+}
+
 
 .nav-links {
   display: flex;
