@@ -76,7 +76,9 @@ body {
 .navigation {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 36px;
+  margin-right: 180px;
 }
 
 .nav-item {
@@ -95,6 +97,7 @@ body {
 .nav-item.active {
   color: #c084fc;
   background: rgba(255, 255, 255, 0.05);
+  margin-right: 2px;
   padding: 4px 16px;
   border-radius: 99px;
 }
