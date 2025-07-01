@@ -94,19 +94,21 @@ body {
   color: #c084fc;
   background: rgba(255, 255, 255, 0.05);
   padding: 4px 16px;
-  border-radius: 9999px;
+  border-radius: 99px;
 }
 
 .user-profile {
   display: flex;
   align-items: center;
   gap: 16px;
+  
 }
 
 .profile-img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  
 }
 
 .profile-icon {
@@ -114,6 +116,7 @@ body {
   height: 40px;
   background: #1f2937;
   border-radius: 8px;
+  
 }
 
 /* News Bar Positioned Below Nav */

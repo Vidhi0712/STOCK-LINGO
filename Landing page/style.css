@@ -44,13 +44,14 @@ html, body {
   background-repeat: no-repeat;
   color: aliceblue;
   position: relative;
-  padding: 0 2vw;
+  padding: 0 0.5vw;
 }
 
 .logo {
-  height: 90px;
+  height: 150px;
   width: auto;
   object-fit: contain;
+  
 }
 
 nav {
@@ -78,7 +79,7 @@ nav {
     color: #141212bb;
     transition: all ease 0.4s;
     position: relative;
-    font-size: 18px;
+    font-size: 26px;
     overflow: hidden;
     
 }

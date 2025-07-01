@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quiz Streak Leaderboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="../Landing page/index.html">
+      <img src="../Landing page/finwise.png" alt="FinWise Logo" class="logo-img" />
+    </a>
+  </div>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Module</a></li>
+      <li><a href="#">Expert Adviser</a></li>
+    </ul>
+    <div class="profile-icon" id="profile-icon">
+      <img src="https://i.pravatar.cc/40?img=9" alt="Profile" />
+      <div class="dropdown-menu" id="profile-menu">
+        <a href="#">My Profile</a>
+        <a href="#">Settings</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Leaderboard Container -->
+  <div class="leaderboard-container">
+    <h2 class="leaderboard-title">🔥 Quiz Streak Leaderboard</h2>
+    <p class="leaderboard-subtitle">Top streakers of the day</p>
+
+    <!-- Podium -->
+    <div class="podium">
+      <div class="podium-box second">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/60?img=2" class="avatar" />
+          
+        </div>
+        <span class="name">Anya</span>
+        <span class="streak">10 Days</span>
+      </div>
+      <div class="podium-box first">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/60?img=1" class="avatar" />
+          <span class="crown">👑</span>
+        </div>
+        <span class="name">Ram </span>
+        <span class="streak">12 Days</span>
+      </div>
+      <div class="podium-box third">
+        <div class="avatar-wrap">
+          <img src="https://i.pravatar.cc/60?img=3" class="avatar" />
+          
+        </div>
+        <span class="name">Karan</span>
+        <span class="streak">9 Days</span>
+      </div>
+    </div>
+
+    <!-- Leaderboard List -->
+    <div class="leaderboard">
+      <div class="entry current-user">
+        <span class="rank">4</span>
+        <div class="user-info">
+          <img src="https://i.pravatar.cc/40?img=4" class="avatar" />
+          <span class="name">You</span>
+        </div>
+        <span class="streak">8 Days</span>
+      </div>
+      <div class="entry"><span class="rank">5</span><div class="user-info"><img src="https://i.pravatar.cc/40?img=5" class="avatar" /><span class="name">Meena</span></div><span class="streak">7 Days</span></div>
+      <div class="entry"><span class="rank">6</span><div class="user-info"><img src="https://i.pravatar.cc/40?img=6" class="avatar" /><span class="name">Dev</span></div><span class="streak">7 Days</span></div>
+      <div class="entry"><span class="rank">7</span><div class="user-info"><img src="https://i.pravatar.cc/40?img=7" class="avatar" /><span class="name">Sara</span></div><span class="streak">6 Days</span></div>
+      <div class="entry"><span class="rank">8</span><div class="user-info"><img src="https://i.pravatar.cc/40?img=8" class="avatar" /><span class="name">Ravi</span></div><span class="streak">6 Days</span></div>
+      <div class="entry"><span class="rank">9</span><div class="user-info"><img src="https://i.pravatar.cc/40?img=10" class="avatar" /><span class="name">Priya</span></div><span class="streak">5 Days</span></div>
+      <div class="entry"><span class="rank">10</span><div class="user-info"><img src="https://i.pravatar.cc/40?img=11" class="avatar" /><span class="name">Aditya</span></div><span class="streak">5 Days</span></div>
+    </div>
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="script.js"></script>
+</body>
+<canvas id="particles-canvas"></canvas>
+
+</html>
