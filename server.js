@@ -14,12 +14,14 @@ const path = require('path'); // Add at the top
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'landing', 'index.html'));
+});
 
 // MONGOOSE
   mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('DB connected!'))
   .catch((err) => console.log(err));
-
 
 // SIGNUP 
 app.post('/signup', async (req, res) => {
