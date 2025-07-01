@@ -67,6 +67,26 @@ app.post('/login', async (req, res) => {
 });
 
 
+let latestAccuracy = 0;
+
+app.post('/save-score', (req, res) => {
+  const { accuracy } = req.body;
+  console.log('Received accuracy:', accuracy);
+  latestAccuracy = accuracy; // In real apps, save per user session
+  res.sendStatus(200);
+});
+
+
+
+
+
+app.get('/get-accuracy', (req, res) => {
+  res.json({ accuracy: latestAccuracy });
+});
+
+
+
+
 // START SERVER
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -162,6 +162,7 @@ function showResults() {
   `;
 }
 
+
 function goToNextSegment() {
   // Replace with your segment logic — for now, just an alert
   alert("Moving to next segment...");
@@ -169,3 +170,11 @@ function goToNextSegment() {
 }
 
 });
+
+
+
+
+
+
+
+
