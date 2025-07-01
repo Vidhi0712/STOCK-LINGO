@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FinSim - Financial Simulation App</title>
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="../landing/finwise.png" type="image/png" />
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts: Space Grotesk -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,30 +33,24 @@
     <!-- Navigation Header -->
     <header class="nav-header">
       <div class="nav-container">
-       <!-- Logo -->
-          <div class="logo-section">
-            <div class="logo-icon">
-              
-            </div>
-                       <div class="logo-section">
-              <div class="logo-icon">
-                <a href="../landing/index.html">
-                <img src="../landing/finwise.png" alt="Logo"  class="logo-img"/></a>
-              </div>
-            </div>
-
+        <!-- Logo -->
+        <div class="logo-section">
+          <div class="logo-icon">
+            <a href="../landing/index.html">
+              <img src="../landing/finwise.png" alt="Logo" class="logo-img" style="height: 120px;" />
+            </a>
           </div>
+        </div>
+
         <!-- Navigation Menu -->
         <div class="nav-menu-section">
           <nav class="nav-links">
             <a href="../dashboard/dashboard2.html" class="nav-link">Dashboard</a>
             <a href="../modules/modules.html" class="nav-link">Learn</a>
             <a href="../stimulator/index.html" class="nav-link">Simulate</a>
-            
+            <a href="../expert-adviser/index.html" class="nav-link">Advisor</a>
           </nav>
-          <a href="../landing/index.html">
-          <button class="help-button">Help</button></a>
-
+          <a href="../landing/index.html"><button class="help-button">Help</button></a>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/371f988d0774905afe07f7a851ce87f932c0e919?width=80"
             alt="Profile"
@@ -83,15 +84,15 @@
                 class="profile-image"
               />
               <div class="profile-details">
-                <h2 class="profile-name" id="profile-name"></h2>
+                <h2 class="profile-name" id="profile-name">Sophia Clark</h2>
                 <p class="profile-level">Level 7</p>
                 <p class="profile-xp">1250 XP</p>
               </div>
             </div>
 
-            <!-- Progress Grid -->
+            <!-- Progress + Lessons Grid -->
             <div class="progress-grid">
-              <!-- Progress Overview -->
+              <!-- Quiz Progress -->
               <div class="progress-section">
                 <h3 class="section-title">Progress Overview</h3>
                 <div class="stats-info">
@@ -99,78 +100,33 @@
                   <p class="stat-value">85%</p>
                   <p class="stat-time">All Time</p>
                 </div>
-
-                <!-- Progress Chart -->
                 <div class="chart-container">
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 100px"></div>
-                    <span class="month-label">Jan</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 120px"></div>
-                    <span class="month-label">Feb</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 80px"></div>
-                    <span class="month-label">Mar</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 140px"></div>
-                    <span class="month-label">Apr</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 110px"></div>
-                    <span class="month-label">May</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 90px"></div>
-                    <span class="month-label">Jun</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 130px"></div>
-                    <span class="month-label">Jul</span>
-                  </div>
+                  <div class="chart-bar"><div class="bar bar-jan"></div><span class="month-label">Jan</span></div>
+                  <div class="chart-bar"><div class="bar bar-feb"></div><span class="month-label">Feb</span></div>
+                  <div class="chart-bar"><div class="bar bar-mar"></div><span class="month-label">Mar</span></div>
+                  <div class="chart-bar"><div class="bar bar-apr"></div><span class="month-label">Apr</span></div>
+                  <div class="chart-bar"><div class="bar bar-may"></div><span class="month-label">May</span></div>
+                  <div class="chart-bar"><div class="bar bar-jun"></div><span class="month-label">Jun</span></div>
+                  <div class="chart-bar"><div class="bar bar-jul"></div><span class="month-label">Jul</span></div>
                 </div>
               </div>
 
-              <!-- Lessons Completed -->
+              <!-- Lessons Progress -->
               <div class="lessons-section">
+                <h3 class="section-title">Lessons Completed</h3>
                 <div class="stats-info">
                   <p class="stat-label">Lessons Completed</p>
                   <p class="stat-value">35/50</p>
                   <p class="stat-time">All Time</p>
                 </div>
-
-                <!-- Lessons Chart -->
                 <div class="chart-container">
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 70px"></div>
-                    <span class="month-label">Jan</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 90px"></div>
-                    <span class="month-label">Feb</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 110px"></div>
-                    <span class="month-label">Mar</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 85px"></div>
-                    <span class="month-label">Apr</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 130px"></div>
-                    <span class="month-label">May</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 100px"></div>
-                    <span class="month-label">Jun</span>
-                  </div>
-                  <div class="chart-bar">
-                    <div class="bar" style="height: 125px"></div>
-                    <span class="month-label">Jul</span>
-                  </div>
+                  <div class="chart-bar"><div class="bar lesson-jan"></div><span class="month-label">Jan</span></div>
+                  <div class="chart-bar"><div class="bar lesson-feb"></div><span class="month-label">Feb</span></div>
+                  <div class="chart-bar"><div class="bar lesson-mar"></div><span class="month-label">Mar</span></div>
+                  <div class="chart-bar"><div class="bar lesson-apr"></div><span class="month-label">Apr</span></div>
+                  <div class="chart-bar"><div class="bar lesson-may"></div><span class="month-label">May</span></div>
+                  <div class="chart-bar"><div class="bar lesson-jun"></div><span class="month-label">Jun</span></div>
+                  <div class="chart-bar"><div class="bar lesson-jul"></div><span class="month-label">Jul</span></div>
                 </div>
               </div>
             </div>
@@ -178,9 +134,7 @@
             <!-- Badges Earned -->
             <div class="badges-section">
               <h3 class="badges-title">Badges Earned</h3>
-
               <div class="badges-grid">
-                <!-- Savings Pro Badge -->
                 <div class="badge-item">
                   <div class="badge-image-container">
                     <img
@@ -192,7 +146,6 @@
                   <h4 class="badge-title">Savings Pro</h4>
                 </div>
 
-                <!-- Budget Master Badge -->
                 <div class="badge-item">
                   <div class="badge-image-container">
                     <img
@@ -204,7 +157,6 @@
                   <h4 class="badge-title">Budget Master</h4>
                 </div>
 
-                <!-- Debt Conqueror Badge -->
                 <div class="badge-item">
                   <div class="badge-image-container">
                     <img
@@ -217,20 +169,13 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </main>
-    <script>
-     let user = localStorage.getItem('loggedInUser');
-    if (!user) {
-       user = localStorage.getItem('signedUpUser');
-      }
 
-     if (user) {
-     document.getElementById('profile-name').innerText = user;
-    }
-</script>
-
+    <!-- Script -->
+    <script src="./script.js"></script>
   </body>
 </html>

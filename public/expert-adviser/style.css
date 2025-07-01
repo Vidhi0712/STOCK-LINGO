@@ -28,6 +28,26 @@ html, body {
   font-size: 1.5rem;
   font-weight: bold;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+}
+
+.logo-f {
+  color: #c084fc;
+  font-family: "Outfit", sans-serif;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+
+.logo-img {
+  height: 40px;
+  max-width: auto;
+  object-fit: contain;
+}
 
 .nav-links {
   display: flex;
