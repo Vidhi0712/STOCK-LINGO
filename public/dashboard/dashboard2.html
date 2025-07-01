@@ -15,8 +15,8 @@
 
 
    <div class="logo">
-  <a href="../Landing page/index.html">
-    <img src="../Landing page/finwise.png" alt="FinWise Logo" class="logo-img" />
+  <a href="../landing/index.html">
+    <img src="../landing/finwise.png" alt="FinWise Logo" class="logo-img" />
   </a>
 </div>
 
@@ -24,13 +24,13 @@
 
     <div class="navigation">
     <a href="./dashboard2.html" class="nav-item active">Dashboard</a>
-    <a href="../MODULES SYLLABUS/modules.html" class="nav-item">Lessons</a>
-    <a href="../WHAT IF STIMULATOR/index.html" class="nav-item">Simulator</a>
+    <a href="../modules/modules.html" class="nav-item">Lessons</a>
+    <a href="../stimulator/index.html" class="nav-item">Simulator</a>
   </div>
 
     <div class="user-profile">
   <div class="profile-icon">
-    <a href="../PROFILE PAGE/index.html">
+    <a href="../profile/index.html">
       <img src="https://i.pravatar.cc/44" alt="Profile" class="profile-img"/>
     </a>
   </div>
@@ -48,7 +48,7 @@
   <!-- Welcome -->
   <div class="main-content">
     <section class="welcome-section">
-      <h1 class="welcome-title">Hi, Ram! ready to take the first step?</h1>
+      <h1 class="welcome-title" id="welcome-back-title">Welcome back!</h1>
       <p class="welcome-subtitle">Ready to level up your financial literacy today?</p>
     </section>
 
@@ -65,7 +65,14 @@
     </section>
   </div>
 
-  <script src="dashboard.js"></script>
+  <script src="dashboard.js">
+  const user = localStorage.getItem('loggedInUser');
+  console.log('Logged in user:', user); // ✅ Debug
+  if (user) {
+    document.getElementById('welcome-back-title').innerText = `Welcome back, ${user}!`;
+  }
+</script>
+
   
 </body>
 </html>

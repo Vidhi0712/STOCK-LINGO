@@ -14,22 +14,22 @@
   <div class="main-header">
 
    <div class="logo">
-  <a href="../Landing page/index.html">
-    <img src="../Landing page/finwise.png" alt="FinWise Logo" class="logo-img" />
+  <a href="../landing/index.html">
+    <img src="../landing/finwise.png" alt="FinWise Logo" class="logo-img" />
   </a>
 </div>
 
 
 
     <div class="navigation">
-    <a href="./index.html" class="nav-item active">Dashboard</a>
-    <a href="../MODULES SYLLABUS/modules.html" class="nav-item">Lessons</a>
-    <a href="../WHAT IF STIMULATOR/index.html" class="nav-item">Simulator</a>
+    <a href="./dashboard1.html" class="nav-item active">Dashboard</a>
+    <a href="../modules/modules.html" class="nav-item">Lessons</a>
+    <a href="../stimulator/index.html" class="nav-item">Simulator</a>
   </div>
 
    <div class="user-profile">
   <div class="profile-icon">
-    <a href="../PROFILE PAGE/index.html">
+    <a href="../profile/index.html">
       <img src="https://i.pravatar.cc/44" alt="Profile" class="profile-img"/>
     </a>
   </div>
@@ -49,8 +49,8 @@
   <!-- Welcome -->
   <div class="main-content">
     <section class="welcome-section">
-      <h1 class="welcome-title"></h1>
-      <p class="welcome-subtitle">Ready to level up your financial literacy today?</p>
+      <h1 class="welcome-title" id="welcome-title">Welcome</h1>
+      <p class="welcome-subtitle">ready to take the first step?</p>
     </section>
 
     <section class="progress-section">
@@ -66,7 +66,14 @@
     </section>
   </div>
 
-  <script src="dashboard.js"></script>
+  <script src="dashboard.js">
+  const user = localStorage.getItem('signedUpUser');
+  console.log('Signed up user:', user); // 
+  if (user) {
+    document.getElementById('welcome-title').innerText = `Welcome, ${user}!`;
+  }
   
+</script>
+
 </body>
 </html>
