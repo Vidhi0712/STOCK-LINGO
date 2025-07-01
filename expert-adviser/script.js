@@ -3,69 +3,155 @@ function toggleModal() {
   modal.classList.toggle("active");
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const ctx = document.getElementById("lineChart").getContext("2d");
+let barChart;
+let currentView = 'main';
+let currentCategory = 'all';
 
-  new Chart(ctx, {
-    type: "line",
+const fullData = {
+  all: {
+    labels: ['🍽️ Food', '🛍️ Shopping', '🧺 Grocery', '✈️ Travel', '🎮 Entertainment', '💡 Utilities'],
+    actual: [40, 90, 55, 80, 70, 20],
+    budget: [35, 70, 60, 60, 50, 30],
+    lastMonth: [45, 100, 50, 75, 60, 25]
+  },
+  essential: {
+    labels: ['🍽️ Food', '🧺 Grocery', '💡 Utilities'],
+    actual: [40, 55, 20],
+    budget: [35, 60, 30],
+    lastMonth: [45, 50, 25]
+  },
+  lifestyle: {
+    labels: ['🛍️ Shopping', '✈️ Travel', '🎮 Entertainment'],
+    actual: [90, 80, 70],
+    budget: [70, 60, 50],
+    lastMonth: [100, 75, 60]
+  }
+};
+
+const drillDownData = {
+  '🛍️ Shopping': {
+    labels: ['👗 Clothes', '📱 Electronics', '🎁 Gifts'],
+    actual: [40, 30, 20],
+    budget: [30, 25, 15],
+    lastMonth: [50, 35, 15]
+  },
+  '🍽️ Food': {
+    labels: ['🍕 Dining Out', '🍎 Groceries', '🍫 Snacks'],
+    actual: [20, 15, 5],
+    budget: [15, 20, 5],
+    lastMonth: [25, 10, 5]
+  }
+};
+
+function updateChart() {
+  const category = document.getElementById("categorySelect").value;
+  const compare = document.getElementById("compareSelect").value;
+
+  currentCategory = category;
+  currentView = 'main';
+  document.getElementById("backButton").style.display = "none";
+
+  const compareList = compare === 'none' ? [] : [compare];
+  renderChart(fullData[category], compareList);
+}
+
+function goBack() {
+  updateChart();
+}
+
+function renderChart(dataSet, compareList = []) {
+  const ctx = document.getElementById('donutChart').getContext('2d');
+  if (barChart) barChart.destroy();
+
+  const datasets = [
+    {
+      label: 'Actual Spending (₹)',
+      data: dataSet.actual,
+      backgroundColor: '#a259ff',
+      borderRadius: 6,
+      barThickness: 40
+    }
+  ];
+
+  if (compareList.includes('budget')) {
+    datasets.push({
+      label: 'Budget (₹)',
+      data: dataSet.budget,
+      backgroundColor: '#00d4ff',
+      borderRadius: 6,
+      barThickness: 30
+    });
+  }
+
+  if (compareList.includes('lastMonth')) {
+    datasets.push({
+      label: 'Last Month (₹)',
+      data: dataSet.lastMonth,
+      backgroundColor: '#ffc107',
+      borderRadius: 6,
+      barThickness: 30
+    });
+  }
+
+  barChart = new Chart(ctx, {
+    type: 'bar',
     data: {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-      datasets: [{
-        label: "Monthly Expenses (₹)",
-        data: [10000, 10500, 10700, 11100, 11600, 12000], // ✅ Smooth data
-        borderColor: "#a259ff",
-        backgroundColor: "rgba(162, 89, 255, 0.15)",
-        pointBackgroundColor: "#ffffff",
-        pointBorderColor: "#a259ff",
-        pointRadius: 4,
-        pointHoverRadius: 6,
-        tension: 0.3, // ✅ Smooth but not floppy
-        fill: true,
-        borderWidth: 2
-      }]
+      labels: dataSet.labels,
+      datasets: datasets
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       animation: {
-        duration: 1000,
-        easing: 'easeOutQuart'
+        duration: 800,
+        easing: 'easeOutCubic'
       },
       plugins: {
         legend: {
+          position: 'bottom',
           labels: {
-            color: "#ccc",
-            font: {
-              weight: "bold"
-            }
+            color: '#ccc',
+            padding: 10
           }
         },
         tooltip: {
-          backgroundColor: "#1f1c2d",
-          titleColor: "#a259ff",
-          bodyColor: "#fff"
+          backgroundColor: '#1f1c2d',
+          titleColor: '#a259ff',
+          bodyColor: '#fff',
+          callbacks: {
+            label: (ctx) => `${ctx.dataset.label}: ₹${ctx.raw.toLocaleString()}`
+          }
         }
       },
       scales: {
         x: {
-          ticks: {
-            color: "#ccc"
-          },
-          grid: {
-            color: "rgba(255, 255, 255, 0.05)"
-          }
+          ticks: { color: '#ccc' },
+          grid: { display: false }
         },
         y: {
-          min: 9500,   // ✅ fixed bottom
-          max: 12500,  // ✅ fixed top
-          ticks: {
-            color: "#ccc"
-          },
+          beginAtZero: true,
+          ticks: { color: '#ccc' },
           grid: {
-            color: "rgba(255, 255, 255, 0.05)"
+            color: 'rgba(255, 255, 255, 0.05)'
+          }
+        }
+      },
+      onClick: (e, elements) => {
+        if (elements.length > 0 && currentView === 'main') {
+          const clickedLabel = barChart.data.labels[elements[0].index];
+          if (drillDownData[clickedLabel]) {
+            renderChart(drillDownData[clickedLabel], compareList);
+            document.getElementById("backButton").style.display = "inline-block";
+            currentView = 'drill';
           }
         }
       }
     }
   });
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("categorySelect").value = "all";
+  document.getElementById("compareSelect").value = "budget"; // default compare
+  updateChart();
 });
