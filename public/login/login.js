@@ -1,8 +1,10 @@
 async function handleLogin(event) {
   event.preventDefault();
 
-  const formData = new FormData(event.target);
-  const data = Object.fromEntries(formData);
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  const data = { username, password }; // ✅ Make sure this line exists
 
   const res = await fetch('/login', {
     method: 'POST',
@@ -13,13 +15,14 @@ async function handleLogin(event) {
   });
 
   if (res.ok) {
-    const { username } = data; // we know what they typed
-    localStorage.setItem('loggedInUser', username);  // ✅ save it
+    const result = await res.json(); // ✅ Parse response body
+    localStorage.setItem('loggedInUser', result.username); // ✅ Save correct username
     localStorage.removeItem('signedUpUser');
     alert('Login successful!');
-    window.location.href = '/dashboard/dashboard2.html'; // Or wherever you want to go
+    window.location.href = '/dashboard/dashboard2.html'; 
   } else {
     const error = await res.text();
     alert('Login failed: ' + error);
   }
 }
+
