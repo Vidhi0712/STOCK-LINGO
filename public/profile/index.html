@@ -76,7 +76,7 @@
                 class="profile-image"
               />
               <div class="profile-details">
-                <h2 class="profile-name">Sophia Clark</h2>
+                <h2 class="profile-name" id="profile-name">Your Name</h2>
                 <p class="profile-level">Level 7</p>
                 <p class="profile-xp">1250 XP</p>
               </div>
@@ -214,5 +214,21 @@
         </div>
       </div>
     </main>
+    <script>
+     // Try logged in user first
+    let user = localStorage.getItem('loggedInUser');
+
+      // If not logged in, fallback to signed up user
+    if (!user) {
+        user = localStorage.getItem('signedUpUser');
+    }
+
+    console.log('Profile user:', user);
+
+    if (user) {
+        document.getElementById('profile-name').innerText = `${user}`;
+    }
+</script>
+
   </body>
 </html>

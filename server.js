@@ -2,19 +2,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const bcrypt = require('bcrypt');
 const User = require('./models/User');
 const app = express();
+const cors = require('cors');
+app.use(cors());
 
 // MIDDLEWARE
 app.use(express.json());
 const path = require('path'); // Add at the top
 
-app.use('/signup', express.static(path.join(__dirname, 'SIGN UP PAGE')));
-app.use('/login', express.static(path.join(__dirname, 'LOG IN PAGE')));
-app.use('/dashboard', express.static(path.join(__dirname, 'DASHBOARD PAGE')));
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 // MONGOOSE
-mongoose.connect(process.env.MONGODB_URI)
+  mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('DB connected!'))
   .catch((err) => console.log(err));
 
@@ -25,7 +27,7 @@ app.post('/signup', async (req, res) => {
     console.log('Received signup:', req.body);
     try {
     
-    const bcrypt = require('bcrypt');
+    
     const saltRounds = 10;
 
     const hashedPassword = await bcrypt.hash(password, saltRounds);
@@ -35,18 +37,22 @@ app.post('/signup', async (req, res) => {
 
     res.status(201).send('User created!');
   } catch (err) {
+    console.log('Signup error:', err.message);
     res.status(400).send(err.message);
   }
 });
 
 // LOGIN 
-const bcrypt = require('bcrypt'); // If you want hashing — optional for now
+ // If you want hashing — optional for now
 
 app.post('/login', async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { username, password } = req.body;
+    console.log('Trying to login with username:', username);
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username });
+    console.log('User found?', user);
+
     if (!user) return res.status(404).send('User not found');
 
     const isMatch = await bcrypt.compare(password, user.password);
