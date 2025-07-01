@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense Advisor</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">FinWise</div>
+    <ul class="nav-links">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Modules</a></li>
+      <li><a href="#">Simulator</a></li>
+      <li><a href="#" class="active">Adviser</a></li>
+    </ul>
+    <div class="nav-profile" onclick="toggleModal()">
+      <img src="https://i.ibb.co/Hr7W7sJ/user-icon.png" alt="Profile" />
+    </div>
+  </nav>
+
+  <!-- Profile Modal -->
+  <div class="modal" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle">
+    <div class="modal-content">
+      <span class="close-btn" onclick="toggleModal()">&times;</span>
+      <h2 id="profileTitle">User Profile</h2>
+      <p><strong>Name:</strong> Pragya</p>
+      <p><strong>Email:</strong> pragya@example.com</p>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="container">
+    <div class="title">Your Personal Expense Advisor</div>
+    <div class="subtitle">
+      Link your bank account to unlock personalized insights and recommendations.<br>
+      Explore your financial universe with FinWise.
+    </div>
+    <button class="connect-btn">Connect your account</button>
+
+    <!-- Chart Section -->
+    <div class="chart-container">
+      <h2>Spending Breakdown</h2>
+      <canvas id="lineChart"></canvas>
+
+    </div>
+
+    <!-- Suggestions -->
+    <div class="suggestion-section">
+      <h2>💡 Insight:</h2>
+      <p>Spending is highest on Shopping, Travel, and Entertainment, while Utilities are the lowest.</p>
+
+      <h2>📉 Recommendation:</h2>
+      <p>Reduce spending on non-essentials like shopping and entertainment. Prioritize needs (like utilities) and consider saving or investing the extra money.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

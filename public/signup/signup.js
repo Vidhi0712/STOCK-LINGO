@@ -41,7 +41,8 @@ async function handleSubmit(event) {
 
     if (response.ok) {
       const { username } = data;  // we know what they submitted
-      localStorage.setItem('signedUpUser', username);  // ✅ save it
+      localStorage.setItem('signedUpUser', username);
+      localStorage.removeItem('loggedInUser');  // 
       alert('User created!');
 
   // Redirect to dashboard1

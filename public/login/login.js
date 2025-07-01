@@ -15,6 +15,7 @@ async function handleLogin(event) {
   if (res.ok) {
     const { username } = data; // we know what they typed
     localStorage.setItem('loggedInUser', username);  // ✅ save it
+    localStorage.removeItem('signedUpUser');
     alert('Login successful!');
     window.location.href = '/dashboard/dashboard2.html'; // Or wherever you want to go
   } else {

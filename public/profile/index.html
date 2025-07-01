@@ -26,12 +26,18 @@
     <!-- Navigation Header -->
     <header class="nav-header">
       <div class="nav-container">
-        <!-- Logo -->
-        <div class="logo-section">
-          <div class="logo-icon"></div>
-          <span class="logo-text"></span>
-        </div>
+       <!-- Logo -->
+          <div class="logo-section">
+            <div class="logo-icon">
+              
+            </div>
+                       <div class="logo-section">
+              <div class="logo-icon">
+                <img src="../Landing page/finwise.png" alt="Logo"  class="logo-img"/>
+              </div>
+            </div>
 
+          </div>
         <!-- Navigation Menu -->
         <div class="nav-menu-section">
           <nav class="nav-links">
@@ -76,7 +82,7 @@
                 class="profile-image"
               />
               <div class="profile-details">
-                <h2 class="profile-name" id="profile-name">Your Name</h2>
+                <h2 class="profile-name" id="profile-name"></h2>
                 <p class="profile-level">Level 7</p>
                 <p class="profile-xp">1250 XP</p>
               </div>
@@ -215,18 +221,13 @@
       </div>
     </main>
     <script>
-     // Try logged in user first
-    let user = localStorage.getItem('loggedInUser');
-
-      // If not logged in, fallback to signed up user
+     let user = localStorage.getItem('loggedInUser');
     if (!user) {
-        user = localStorage.getItem('signedUpUser');
-    }
+       user = localStorage.getItem('signedUpUser');
+      }
 
-    console.log('Profile user:', user);
-
-    if (user) {
-        document.getElementById('profile-name').innerText = `${user}`;
+     if (user) {
+     document.getElementById('profile-name').innerText = user;
     }
 </script>
 

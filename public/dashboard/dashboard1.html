@@ -65,13 +65,15 @@
       <div id="stocks-grid" class="stocks-grid"></div>
     </section>
   </div>
-  
+
+  <script src="dashboard.js"></script>
   <script>
   const user = localStorage.getItem('signedUpUser');
   console.log('Signed up user:', user); // 
   if (user) {
     document.getElementById('welcome-title').innerText = `Welcome, ${user}!`;
   }
+  
 </script>
 
 </body>
