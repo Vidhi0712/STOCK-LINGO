@@ -154,7 +154,7 @@ resultContainer.innerHTML = `
         <button onclick="location.reload()" style="margin: 8px; padding: 10px 16px; background-color: #8c45ff; color: #fff; border: none; border-radius: 12px; font-weight: 600;">Restart Quiz</button>
         ${
           canProceed
-            ? `<a href="../CONTENT PAGE/content3.html" style="margin: 8px; padding: 10px 16px; background-color: #28a745; color: #fff; border: none; border-radius: 12px; font-weight: 600; text-decoration: none; display: inline-block;">Move to Next Segment</a>`
+            ? `<a href="../content/content3.html" style="margin: 8px; padding: 10px 16px; background-color: #28a745; color: #fff; border: none; border-radius: 12px; font-weight: 600; text-decoration: none; display: inline-block;">Move to Next Segment</a>`
             : `<button disabled style="margin: 8px; padding: 10px 16px; background-color: #ccc; color: #666; border: none; border-radius: 12px; font-weight: 600;">Score > 3 to Proceed</button>`
         }
       </div>
