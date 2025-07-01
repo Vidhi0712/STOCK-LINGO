@@ -52,15 +52,11 @@ app.post('/login', async (req, res) => {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(401).send('Invalid password');
 
-    res.status(200).send('Login successful!');
+    res.status(200).json({ username: user.username });
   } catch (err) {
     res.status(500).send(err.message);
   }
 });
-
-
-
-
 
 
 // START SERVER

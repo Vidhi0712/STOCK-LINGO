@@ -4,7 +4,7 @@ async function handleLogin(event) {
   const formData = new FormData(event.target);
   const data = Object.fromEntries(formData);
 
-  const res = await fetch('/login', {
+  const res = await fetch('/LOG IN PAGE', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -14,7 +14,7 @@ async function handleLogin(event) {
 
   if (res.ok) {
     alert('Login successful!');
-    window.location.href = '/dashboard/dashboard2.html'; // Or wherever you want to go
+    window.location.href = '/DASHBOARD PAGE/dashboard2.html'; // Or wherever you want to go
   } else {
     const error = await res.text();
     alert('Login failed: ' + error);
